@@ -38,3 +38,5 @@ function isAnagram(s, t) {
     // valid anagram
     return true
 }
+
+module.exports = isAnagram
