@@ -22,7 +22,7 @@ function topKFrequent(nums, k) {
         countNumbers.set(num, count + 1)
     })
 
-    // Store in array numbers using index as their numbers of occurrences
+    // Store each number in the `arr` based on its frequency
     for (let [num, occurrences] of countNumbers) {
         const nums = arr[occurrences] || []
         nums.push(num)
@@ -43,3 +43,5 @@ function topKFrequent(nums, k) {
 
     return output
 }
+
+module.exports = topKFrequent
