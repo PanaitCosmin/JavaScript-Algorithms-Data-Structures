@@ -12,7 +12,7 @@ function topKFrequent(nums, k) {
     // Initialize a Map to store the number of occurrences for each number
     const countNumbers = new Map()
     // Initialize an Array where index represents frequency and value is a list of numbers with that frequency
-    const arr = new Array(nums.length + 1).fill(0)
+    const arr = new Array(nums.length + 1).fill().map(() => []);
     // Initalize an Array to store the final result
     const output = []
 
@@ -24,13 +24,11 @@ function topKFrequent(nums, k) {
 
     // Store each number in the `arr` based on its frequency
     for (let [num, occurrences] of countNumbers) {
-        const nums = arr[occurrences] || []
-        nums.push(num)
-        arr[occurrences] = nums
+        arr[occurrences].push(num)
     }
 
     // Iterate in reverse order in arr to find the top k freq. elements
-    for (let i = nums.length - 1; i >= 0; i--) {
+    for (let i = arr.length - 1; i >= 0; i--) {
         if (k < 0) break
         if (arr[i]) {
             for (let num of arr[i]) {
@@ -45,3 +43,4 @@ function topKFrequent(nums, k) {
 }
 
 module.exports = topKFrequent
+
