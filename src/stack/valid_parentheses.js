@@ -6,12 +6,13 @@
  * @returns {boolean}
  */
 function isvalidParentheses(s) {
+    // Initialize a Map to store pairs of closing and opening parentheses
     const parentheses = new Map([
         [")", "("],
         ["]", "["],
         ["}", "{"],
     ])
-
+    // Initialize an array to keep track of opening parentheses encountered
     const stack = []
 
     // Loop through every parenthese
